@@ -1,8 +1,5 @@
 package br.com.dti.kt;
 
-import static br.com.dti.kt.core.Constants.DEFAULT_PARALLELISM;
-import static br.com.dti.kt.core.Constants.OUTPUT_PARALLELISM;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -24,8 +21,9 @@ public class ComprasBatch {
         final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
         DataSet<Tuple5<BigInteger, String, BigDecimal, Date, Boolean>> compraDataset = DefautSource.getData(env, parameter);
-
-        int outputParalelism = parameter.has(OUTPUT_PARALLELISM) ? parameter.getInt(OUTPUT_PARALLELISM) : DEFAULT_PARALLELISM;
+        
+        
+        //int outputParalelism = parameter.has(OUTPUT_PARALLELISM) ? parameter.getInt(OUTPUT_PARALLELISM) : DEFAULT_PARALLELISM;
         
         //result.output(DefautOutput.<ComprasDto>from(parameter)).setParallelism(outputParalelism);        	
         

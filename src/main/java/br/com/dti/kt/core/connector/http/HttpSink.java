@@ -1,6 +1,7 @@
 package br.com.dti.kt.core.connector.http;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -98,7 +99,9 @@ public class HttpSink<T> extends RichSinkFunction<T> {
 
     private String formatBody(List<T> values, int bulkCount) {
     	template.setQtdRegistros(bulkCount);
-        template.setIndexes((List<Object>) values);
+        template.setCodHash(BigInteger.valueOf(values.hashCode()));
+    	template.setIndexes((List<Object>) values);
+        
         return JsonUtils.toJson(template);
     }
     

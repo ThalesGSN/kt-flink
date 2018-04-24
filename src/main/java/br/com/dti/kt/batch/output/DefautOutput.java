@@ -16,8 +16,8 @@ public class DefautOutput {
 	            HttpSink.<T>builder()
 	                .url(parameter.get("default.output.http.properties.address.default"))
 	                .template(DefaultTemplate.builder()
-		                		.nome("Thales Nunes")
-		                		.email("thales.nunes@dtidigital.com.br")
+		                		.nome("Seu Nome aqui")
+		                		.email("seu.email@dtidigital.com.br")
 		                		.build())
 	                .build()
 	        );
@@ -27,10 +27,7 @@ public class DefautOutput {
     	return new HttpOutputFormat<>(
             HttpSink.<T>builder()
                 .url(parameter.get("default.output.http.properties.address.test"))
-                .template(DefaultTemplate.builder()
-	                		.nome("Thales Nunes")
-	                		.email("thales.nunes@dtidigital.com.br")
-	                		.build())
+                .template(new DefaultTemplate())
                 .build()
         );
     }

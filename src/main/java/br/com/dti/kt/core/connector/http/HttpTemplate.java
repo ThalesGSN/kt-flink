@@ -1,6 +1,7 @@
 package br.com.dti.kt.core.connector.http;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 
 public interface HttpTemplate extends Serializable {
@@ -12,4 +13,8 @@ public interface HttpTemplate extends Serializable {
     Integer getQtdRegistros();
 
     void setQtdRegistros(Integer qtdRegistros);
+
+    BigInteger getCodHash();
+    
+    void setCodHash(BigInteger codHash);
 }
